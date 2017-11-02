@@ -1,0 +1,8 @@
+with open("list.txt", "r") as rawfile:
+    text = rawfile.read()
+    words = text.split()
+    text = text.replace('\n', '').replace('\r', '')
+    print(text)
+    char = len(text.replace('\n', '').replace('\r', ''))
+    print(f"Number of words : {len(words)}\n"
+          f"Number of characters : {len(text)}")

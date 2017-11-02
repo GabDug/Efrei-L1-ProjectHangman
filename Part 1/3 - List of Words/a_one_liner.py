@@ -1,0 +1,1 @@
+for w in ["Salut", "les", "amis", "Anticonstitutionnellement"]: print(w[1:-1])
