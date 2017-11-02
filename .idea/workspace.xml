@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a705d5db-4a28-498c-9a3b-9916dec64094" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Part 2/FirstDraftHangman.py" afterPath="$PROJECT_DIR$/Part 2/FirstDraftHangman.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +21,7 @@
     <SUITE FILE_PATH="coverage/Project_Hangman$h.coverage" NAME="h Coverage Results" MODIFIED="1509029330058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Part 1/List of Words" />
     <SUITE FILE_PATH="coverage/Project_Hangman$f.coverage" NAME="f Coverage Results" MODIFIED="1509035843412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Part 1/4 - Text Files" />
     <SUITE FILE_PATH="coverage/Project_Hangman$c__1_.coverage" NAME="c (1) Coverage Results" MODIFIED="1509034404915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Part 1/4 - Text Files" />
-    <SUITE FILE_PATH="coverage/Project_Hangman$FirstDraftHangman.coverage" NAME="FirstDraftHangman Coverage Results" MODIFIED="1509649240877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Part 2" />
+    <SUITE FILE_PATH="coverage/Project_Hangman$FirstDraftHangman.coverage" NAME="FirstDraftHangman Coverage Results" MODIFIED="1509659451861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Part 2" />
     <SUITE FILE_PATH="coverage/Project_Hangman$a.coverage" NAME="a Coverage Results" MODIFIED="1509031645731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Part 1/4 - Text Files" />
     <SUITE FILE_PATH="coverage/Project_Hangman$c.coverage" NAME="c Coverage Results" MODIFIED="1509031771300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Part 1/3 - List of Words" />
     <SUITE FILE_PATH="coverage/Project_Hangman$e.coverage" NAME="e Coverage Results" MODIFIED="1509034884023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Part 1/4 - Text Files" />
@@ -33,8 +35,35 @@
       <file leaf-file-name="FirstDraftHangman.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Part 2/FirstDraftHangman.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="116" column="10" lean-forward="false" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
+            <state relative-caret-position="48">
+              <caret line="207" column="13" lean-forward="true" selection-start-line="207" selection-start-column="13" selection-end-line="207" selection-end-column="13" />
+              <folding>
+                <element signature="e#113#324#0" expanded="false" />
+                <element signature="e#112#1709#0" expanded="false" />
+                <element signature="e#341#552#0" expanded="false" />
+                <element signature="e#569#780#0" expanded="false" />
+                <element signature="e#797#1008#0" expanded="false" />
+                <element signature="e#1025#1236#0" expanded="false" />
+                <element signature="e#1253#1464#0" expanded="false" />
+                <element signature="e#1481#1692#0" expanded="false" />
+                <element signature="e#1728#1983#0" expanded="false" />
+                <element signature="e#1727#3646#0" expanded="false" />
+                <element signature="e#2002#2257#0" expanded="false" />
+                <element signature="e#2276#2531#0" expanded="false" />
+                <element signature="e#2550#2805#0" expanded="false" />
+                <element signature="e#2824#3079#0" expanded="false" />
+                <element signature="e#3098#3353#0" expanded="false" />
+                <element signature="e#3372#3627#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,6 +112,7 @@
         <option value="$PROJECT_DIR$/Part 1/4 - Text Files/d.py" />
         <option value="$PROJECT_DIR$/Part 1/4 - Text Files/e.py" />
         <option value="$PROJECT_DIR$/Part 1/4 - Text Files/f.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Part 2/FirstDraftHangman.py" />
       </list>
     </option>
@@ -133,8 +163,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,6 +197,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -195,12 +226,12 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Python362\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Part 2" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Project Hangman" />
+      <module name="ProjectHangman" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Part 2/FirstDraftHangman.py" />
       <option name="PARAMETERS" value="" />
@@ -455,16 +486,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971016" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5854241" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06690562" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25238097" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19783784" sideWeight="0.4937833" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20108108" sideWeight="0.4937833" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25351351" sideWeight="0.5062167" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -474,7 +507,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -493,7 +525,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#113#324#0" expanded="false" />
+            <element signature="e#112#1709#0" expanded="false" />
+            <element signature="e#341#552#0" expanded="false" />
+            <element signature="e#569#780#0" expanded="false" />
+            <element signature="e#797#1008#0" expanded="false" />
+            <element signature="e#1025#1236#0" expanded="false" />
+            <element signature="e#1253#1464#0" expanded="false" />
+            <element signature="e#1481#1692#0" expanded="false" />
+            <element signature="e#1728#1983#0" expanded="false" />
+            <element signature="e#1727#3646#0" expanded="false" />
+            <element signature="e#2002#2257#0" expanded="false" />
+            <element signature="e#2276#2531#0" expanded="false" />
+            <element signature="e#2550#2805#0" expanded="false" />
+            <element signature="e#2824#3079#0" expanded="false" />
+            <element signature="e#3098#3353#0" expanded="false" />
+            <element signature="e#3372#3627#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -509,7 +558,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#113#324#0" expanded="false" />
+            <element signature="e#112#1709#0" expanded="false" />
+            <element signature="e#341#552#0" expanded="false" />
+            <element signature="e#569#780#0" expanded="false" />
+            <element signature="e#797#1008#0" expanded="false" />
+            <element signature="e#1025#1236#0" expanded="false" />
+            <element signature="e#1253#1464#0" expanded="false" />
+            <element signature="e#1481#1692#0" expanded="false" />
+            <element signature="e#1728#1983#0" expanded="false" />
+            <element signature="e#1727#3646#0" expanded="false" />
+            <element signature="e#2002#2257#0" expanded="false" />
+            <element signature="e#2276#2531#0" expanded="false" />
+            <element signature="e#2550#2805#0" expanded="false" />
+            <element signature="e#2824#3079#0" expanded="false" />
+            <element signature="e#3098#3353#0" expanded="false" />
+            <element signature="e#3372#3627#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Part 2/list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Part 2/FirstDraftHangman.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#113#324#0" expanded="false" />
+            <element signature="e#112#1709#0" expanded="false" />
+            <element signature="e#341#552#0" expanded="false" />
+            <element signature="e#569#780#0" expanded="false" />
+            <element signature="e#797#1008#0" expanded="false" />
+            <element signature="e#1025#1236#0" expanded="false" />
+            <element signature="e#1253#1464#0" expanded="false" />
+            <element signature="e#1481#1692#0" expanded="false" />
+            <element signature="e#1728#1983#0" expanded="false" />
+            <element signature="e#1727#3646#0" expanded="false" />
+            <element signature="e#2002#2257#0" expanded="false" />
+            <element signature="e#2276#2531#0" expanded="false" />
+            <element signature="e#2550#2805#0" expanded="false" />
+            <element signature="e#2824#3079#0" expanded="false" />
+            <element signature="e#3098#3353#0" expanded="false" />
+            <element signature="e#3372#3627#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -662,11 +761,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Part 2/FirstDraftHangman.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="116" column="10" lean-forward="false" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="48">
+          <caret line="207" column="13" lean-forward="true" selection-start-line="207" selection-start-column="13" selection-end-line="207" selection-end-column="13" />
+          <folding>
+            <element signature="e#113#324#0" expanded="false" />
+            <element signature="e#112#1709#0" expanded="false" />
+            <element signature="e#341#552#0" expanded="false" />
+            <element signature="e#569#780#0" expanded="false" />
+            <element signature="e#797#1008#0" expanded="false" />
+            <element signature="e#1025#1236#0" expanded="false" />
+            <element signature="e#1253#1464#0" expanded="false" />
+            <element signature="e#1481#1692#0" expanded="false" />
+            <element signature="e#1728#1983#0" expanded="false" />
+            <element signature="e#1727#3646#0" expanded="false" />
+            <element signature="e#2002#2257#0" expanded="false" />
+            <element signature="e#2276#2531#0" expanded="false" />
+            <element signature="e#2550#2805#0" expanded="false" />
+            <element signature="e#2824#3079#0" expanded="false" />
+            <element signature="e#3098#3353#0" expanded="false" />
+            <element signature="e#3372#3627#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
