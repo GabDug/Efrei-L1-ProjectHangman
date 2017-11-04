@@ -1,3 +1,5 @@
+# displays the number of words and the number of characters in the file
+
 with open("list.txt", "r") as rawfile:
     text = rawfile.read()
     words = text.split()

@@ -1,3 +1,5 @@
+# removes all the occurrences of a given word
+
 l = ["Salut", "les", "amis", "Anticonstitutionnellement", "salut", "salutations", "sAlUT"]
 
 word_to_delete = "SALUT"

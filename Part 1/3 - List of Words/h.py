@@ -1,4 +1,7 @@
-l = ["Salut", "les", "$w_1$", "Anticonstitutionnellement","SALUT"]
+# reads a word from the user and display the number of occurrences of this word and
+# their positions
+
+l = ["Salut", "les", "$w_1$", "Anticonstitutionnellement", "SALUT"]
 l2 = []
 
 word = input("Enter your word? ")

@@ -1,3 +1,5 @@
+# randomly choses a word from the file
+
 import random
 
 with open("list.txt", "r", encoding="utf-8") as rawfile:

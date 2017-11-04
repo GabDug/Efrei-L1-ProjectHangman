@@ -1,3 +1,5 @@
+# create a list of integers representing the length of the corresponding word in the list
+
 l = ["Salut", "les", "amis", "Anticonstitutionnellement"]
 l2 = []
 

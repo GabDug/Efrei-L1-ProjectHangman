@@ -1,3 +1,5 @@
+# find the bigger word of the list following the alphabetical order
+
 l = ["abcdef", "abcdefgh", "abcdefghja"]
 
 max_length = 0

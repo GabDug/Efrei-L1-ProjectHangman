@@ -1,3 +1,5 @@
+# find the longest word of the list
+
 l = ["Salut", "les", "amis", "Anticonstitutionnellement"]
 max_length = 0
 pos = 0
