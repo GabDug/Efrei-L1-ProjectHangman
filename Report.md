@@ -657,3 +657,5 @@ But even if it had add some difficulties, the project was easy to understand so 
 Conclusion
 ----------
 
+This project was very interesting even if we encounter some difficulties, it helped us to develop our level in python 
+and the last part made us rediscovered a class of python which is tkinter. It helped us to improve our knowledge in python.
