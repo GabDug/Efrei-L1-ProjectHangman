@@ -1,5 +1,5 @@
-import os
 import random
+
 
 # NOTE :
 # The formating we used, using f-strings requires Python 3.6+
@@ -50,9 +50,9 @@ while True:
         # The lambda thing is just to remove the s when there is only one error left.
         print(f"Letters you have guessed:\n {fancy_list(letters_tried)}")
         print(
-            f"You have the right to make up to {errors_left} "
-            f"error{(lambda x: 's' if (errors_left != 1) else '' )(errors_left)}.\n"
-            f"{art[gender][-(errors_left+1)]}"  # Corresponds to the right ASCII picture
+            f"You have the right to make up to {errors_left_label} "
+            f"error{(lambda x: 's' if (errors_left_label != 1) else '' )(errors_left_label)}.\n"
+            f"{art[gender][-(errors_left_label+1)]}"  # Corresponds to the right ASCII picture
             f"{fancy_list(w2)}")
 
         # If they are no errors left, break ; else ask a guess

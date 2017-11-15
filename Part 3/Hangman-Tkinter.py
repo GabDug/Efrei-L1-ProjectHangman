@@ -1,9 +1,21 @@
 import random
+import tkinter.messagebox
 from tkinter import *
+from tkinter.ttk import *
+
+
+def fancy_string(s: str):
+    """Return a formated str from a str."""
+    r = ""
+    for i in range(len(s)):
+        r += s[i]
+        if i != len(s) - 1:
+            r += " "
+    return r
 
 
 def fancy_list(l: list):
-    """Return a formated str from a list."""
+    """Return a formated str from a string."""
     r = ""
     for i in range(len(l)):
         r += l[i]
@@ -15,6 +27,7 @@ def fancy_list(l: list):
 def callback_key(event):
     global letters_tried
     print(event)
+    # #We check the state so we're sure there is a word to guess
     if state.get() == "wait_for_input":
         print(event.char)
         l = event.char
@@ -28,28 +41,32 @@ def callback_key(event):
                     else:
                         temp_placeholder += word_placeholder.get()[i]
                 word_placeholder.set(temp_placeholder)
+                word_placeholder_displayed.set(fancy_string(temp_placeholder))
                 print(word_placeholder.get())
             else:
                 errors_left_intvar.set(errors_left_intvar.get() - 1)
+                errors_left_strvar_displayed.set(str(errors_left_intvar.get()) + " errors left.")
                 global photo
-                global label_photo
+                global photo_label
                 photo = PhotoImage(file=f"HangmanFig/Hangman_{6 - errors_left_intvar.get()+1}.gif")
-                label_photo.configure(image=photo)
+                photo_label.configure(image=photo)
                 print(word_placeholder.get())
+
+            letters_tried_strvar.set("Letters tried: " + fancy_list(letters_tried))
         else:
-            print("You've already guessed that letter. Try again.")
+            tkinter.messagebox.showwarning("Letter already guessed",
+                                           "You've already guessed that letter. Please try again.")
 
         # FAILURE
         if errors_left_intvar.get() == 0:
             state.set("failed")
             print("failed")
-            # TODO exit and show failure
+            tkinter.messagebox.showinfo("Boooh!", f"You lost ! Your word was {word.get()}.")
 
         # WIN
         if "_" not in word_placeholder.get():
             state.set("won")
-            print("won")
-            # TODO exit and show win
+            tkinter.messagebox.showinfo("Congratulations!", "You won!")
 
 
 def play():
@@ -66,9 +83,17 @@ def play():
         tmp += "_"
         # if i != len(word.get()) - 1:
         #     tmp += " "
+
+    global photo
+    global photo_label
+    photo = PhotoImage(file=f"HangmanFig/Hangman_1.gif")
+    photo_label.configure(image=photo)
+
     word_placeholder.set(tmp)
-    # toguess.set(word_placeholder.get())
+    word_placeholder_displayed.set(fancy_string(tmp))
+
     errors_left_intvar.set(6)
+    errors_left_strvar_displayed.set("6 errors left.")
 
     # While there are unguessed letters, print the hang(wo)man and the previous guesses
     # while "_" in w2:
@@ -93,38 +118,44 @@ def play():
     #     print("Yay! You win!")
 
 
-root = Tk()
-root.title("Hangman")
+can = Tk()
+can.title("Hangman")
+can.config(bg='white')
 
-can = Canvas(root)
-can.pack()
+# can = Canvas(root)
+# can.pack()
 
-root.bind("<Key>", callback_key)
+can.bind("<Key>", callback_key)
+
+style = Style()
+style.configure("TLabel", background="white", font=('Segoe UI', 10))
 
 start_button = Button(can, text="Start", command=play)
+quit_button = Button(can, text="Quit", command=quit)
 start_button.pack()
+quit_button.pack()
 
-gender = "man"
 letters_tried = []
 
-text_print = StringVar()
+letters_tried_strvar = StringVar()
 word_placeholder = StringVar()
+word_placeholder_displayed = StringVar()
 word = StringVar()
 state = StringVar()
 
-# toguess = StringVar()
-# toguess.set("_ _ _ _")
-
 errors_left_intvar = IntVar()
+errors_left_strvar_displayed = StringVar()
 
-photo = PhotoImage(file="HangmanFig/Hangman_1.gif")
-label_photo = Label(can, image=photo)
-label_photo.pack()
-errors_left = Label(can, textvariable=errors_left_intvar)
-toguess_tk = Label(can, textvariable=word_placeholder)
-text_print = Label(can, textvariable=text_print)
-errors_left.pack()
-toguess_tk.pack()
-text_print.pack()
+photo = PhotoImage(file="HangmanFig/Hangman_0.gif")
+photo_label = Label(can, image=photo)
 
-root.mainloop()
+errors_left_label = Label(can, textvariable=errors_left_strvar_displayed)
+placeholder_word_label = Label(can, textvariable=word_placeholder_displayed)
+letters_tried_label = Label(can, textvariable=letters_tried_strvar)
+
+photo_label.pack()
+errors_left_label.pack()
+placeholder_word_label.pack()
+letters_tried_label.pack()
+
+can.mainloop()
