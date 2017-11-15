@@ -31,7 +31,9 @@ For part 3, we created a GUI using Tkinter. We used a more event driven way of p
 The different algorithms
 ------------------------
 
-####Part 1
+###Part 1
+####3
+
 3. a)    
 
 
@@ -40,7 +42,7 @@ The different algorithms
      for w in l:
      print(w[1:-1])
      
-For this program we just print the differents words from the second letter to the penultimate on after  the other whith a for loop
+For this program we just print the different words from the second letter to the penultimate on after the other with a for loop.
 
 3. b)
 
@@ -57,7 +59,7 @@ For this program we just print the differents words from the second letter to th
     print(f"Longest word is \"{l[pos]}\" at index {pos}.")
 
 For this one we are classing the lenth of the differents words by comparing thoses
-to do so wwe're using an if in a for loop
+to do so wwe're using an if in a for loop.
 
 3. c)
 
@@ -69,7 +71,7 @@ to do so wwe're using an if in a for loop
     print(l[-1])
     
 For this program we're sorting the array by usinge the function sort, the we're showing the last
-string  in the array
+string  in the array.
 
 3. d) 
 
@@ -84,7 +86,7 @@ string  in the array
     print(l2)
     
     
-In this program we're adding the length of all the word in a second array by using a for loop
+In this program we're adding the length of all the word in a second array by using a for loop.
 
 3. e)
 
@@ -95,7 +97,7 @@ In this program we're adding the length of all the word in a second array by usi
         print(w)
         
 In this one we're using the print (f ) to get the length of the array in the print, then we're printing all the array
-by using a for loop
+by using a for loop.
 
 3. f)
 
@@ -115,7 +117,7 @@ by using a for loop
     
     
 For this program we're defining the word to delete then we've created a for loop of the length of the array and we're 
-doing an if to check in a lower version of the words and if it's same word we're deleting it
+doing an if to check in a lower version of the words and if it's same word we're deleting it.
 
 
     
@@ -140,12 +142,118 @@ doing an if to check in a lower version of the words and if it's same word we're
     
 For this program we're defining the word that we need to check the number of occurrence so we've created a for loop of 
 the length of the array and we're doing an if to check in a lower version of the words and if it's same word we're adding
-one to the number of occurrences
+one to the number of occurrences.
 
 
-####Part 2
+####4
+
 
 4. a)
+
+
+    with open("list.txt", "r", encoding="utf-8") as rawfile:
+        text = rawfile.read()
+        words = text.split()
+        text = text.replace('\n', '').replace('\r', '')
+        char = len(text.replace('\n', '').replace('\r', ''))
+        print(f"Number of words : {len(words)}\n"
+              f"Number of characters : {len(text)}")
+              
+In this program we're using the with statement close the file properly, then we read the text. We're using the function
+split to get the number of words and we replace the enters and spaces to get the number of characters whit the len() function.
+
+
+4. b)
+
+
+    with open("list.txt", "r", encoding="utf-8") as rawfile:
+        text = rawfile.read()
+        words = text.split()
+        words_set = sorted(set(words))
+        for w in words_set:
+            print(f"{words.count(w)} {w}")
+            
+In this program we're using the with statement close the file properly, then we read the text. We're using the function
+split to get all words and we sort the words. Finally in the for loop that is doing all the different
+words of the list we put a print (f ) which has the function count to get the number of occurrences.
+
+
+4. c)
+
+
+    with open("list.txt", "r", encoding="utf-8") as rawfile:
+        text = rawfile.read()
+        text = text.upper()
+        print(text)
+    
+        with open("list_upper.txt","w",encoding="utf-8") as rawfile_upper:
+            rawfile_upper.write(text)
+            
+For this program we're using the with statement close the file properly, then we read the text. Then we're using the 
+function upper. Finally we write the text again but in uppercase.
+
+
+4. d)
+
+
+    with open("list.txt", "r", encoding="utf-8") as rawfile:
+        text = rawfile.read()
+        words = text.split()
+        w1 = input("w1? ")
+    
+        for w2 in words:
+            if w1.lower() in w2.lower():
+                print(f"{w2}")
+                
+For this program we're using the with statement close the file properly, then we read the text. Then we're using the 
+function lower Then w're using the function lower. Finally we use the in to find if the word w1 is in w2.
+
+
+4. e)
+
+
+    import random
+
+    with open("list.txt", "r", encoding="utf-8") as rawfile:
+        text = rawfile.read()
+        words = text.split()
+
+    print(words[random.randint(0, len(words)-1)])
+    
+
+For this one we import the random class, then we're using the with statement close the file properly, then we read the text.
+Finally we print a random word by choosing a random int in the length of the number of words.
+
+
+4. f)
+
+
+    import random
+    
+    with open("list.txt", "r", encoding="utf-8") as rawfile:
+        text = rawfile.read()
+        words = text.split()
+    
+        w1 = words[random.randint(0, len(words) - 1)]
+    
+        l = input("Choose a letter: ")
+    
+        w2 = ""
+    
+        if l in w1:
+            for i in range(len(w1)):
+                if w1[i] == l:
+                    w2 += l
+                else:
+                    w2 += "_"
+    
+            print(w2)
+            
+For this one we import the random class, then we're using the with statement close the file properly, then we read the text.
+Then we choose a random word by choosing a random int in the length of the number of words.We input a str. Finally we create a w2 then 
+we use a if to see if a letter is in the word and if it is, we print the word with "_" at the place of other letters.
+
+
     
 Main difficulties encountered
 -----------------------------
