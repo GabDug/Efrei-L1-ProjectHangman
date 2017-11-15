@@ -254,13 +254,404 @@ Then we choose a random word by choosing a random int in the length of the numbe
 we use a if to see if a letter is in the word and if it is, we print the word with "_" at the place of other letters.
 
 
+###Part 2
+
+
+the Hangman without the GUI
+
+    import os
+    import random
+    
+    # NOTE :
+    # The formating we used, using f-strings requires Python 3.6+
+    
+    
+    art = {'man': ["  ______\n"
+                   "  |    |\n"
+                   "       |\n"
+                   "       |\n"
+                   "       |\n"
+                   "       |\n"
+                   "       |\n"
+                   "    ___|___\n",
+                   "  ______\n"
+                   "  |    |\n"
+                   " ( )   |\n"
+                   "       |\n"
+                   "       |\n"
+                   "       |\n"
+                   "       |\n"
+                   "    ___|___\n",
+                   "  ______\n"
+                   "  |    |\n"
+                   " ( )   |\n"
+                   "  |    |\n"
+                   "  |    |\n"
+                   "       |\n"
+                   "       |\n"
+                   "    ___|___\n",
+                   "  ______\n"
+                   "  |    |\n"
+                   " ( )   |\n"
+                   " /|    |\n"
+                   "/ |    |\n"
+                   "       |\n"
+                   "       |\n"
+                   "    ___|___\n",
+                   "  ______\n"
+                   "  |    |\n"
+                   " ( )   |\n"
+                   " /|\   |\n"
+                   "/ | \  |\n"
+                   "       |\n"
+                   "       |\n"
+                   "    ___|___\n",
+                   "  ______\n"
+                   "  |    |\n"
+                   " ( )   |\n"
+                   " /|\   |\n"
+                   "/ | \  |\n"
+                   " /     |\n"
+                   "/      |\n"
+                   "    ___|___\n",
+                   "  ______\n"
+                   "  |    |\n"
+                   " ( )   |\n"
+                   " /|\   |\n"
+                   "/ | \  |\n"
+                   " / \   |\n"
+                   "/   \  |\n"
+                   "    ___|___\n"
+                   ],
+           'woman': ["  ______\n"
+                     "  |    |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "    ___|___\n",
+                     "  ______\n"
+                     "  |    |\n"
+                     " { }   |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "    ___|___\n",
+                     "  ______\n"
+                     "  |    |\n"
+                     " { }   |\n"
+                     "  |    |\n"
+                     "  |    |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "    ___|___\n",
+                     "  ______\n"
+                     "  |    |\n"
+                     " { }   |\n"
+                     " /|    |\n"
+                     "/ |    |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "    ___|___\n",
+                     "  ______\n"
+                     "  |    |\n"
+                     " { }   |\n"
+                     " /|\   |\n"
+                     "/ | \  |\n"
+                     "       |\n"
+                     "       |\n"
+                     "       |\n"
+                     "    ___|___\n",
+                     "  ______\n"
+                     "  |    |\n"
+                     " { }   |\n"
+                     " /|\   |\n"
+                     "/ | \  |\n"
+                     " / \   |\n"
+                     "/---\  |\n"
+                     " |     |\n"
+                     "    ___|___\n",
+                     "  ______\n"
+                     "  |    |\n"
+                     " { }   |\n"
+                     " /|\   |\n"
+                     "/ | \  |\n"
+                     " / \   |\n"
+                     "/---\  |\n"
+                     " | |   |\n"
+                     "    ___|___\n"
+                     ]}
+    
+    
+    def clear():
+        """Clear the screen."""
+        os.system('cls' if os.name == 'nt' else 'clear')
+    
+    
+    def fancy_list(l: list):
+        """Return a formated str from a string."""
+        r = ""
+        for i in range(len(l)):
+            r += l[i]
+            if i != len(l) - 1:
+                r += " "
+        return r
+    
+    
+    def choose_gender():
+        gen = ""
+        while gen != "man" and gen != "woman":
+            choice = input("Do you want to be portrayed as a man ? [Y/n] ")
+            no = ['no', 'n', 'non', 'woman', 'women']
+            if choice in no:
+                gen = 'woman'
+            else:
+                gen = 'man'
+            return gen
+    
+    
+    gender = choose_gender()
+    
+        # While the user wants to play
+        # (if the user wants to quit, break)
+        while True:
+            # Random selection of the word w1
+            with open("list.txt", "r", encoding="utf-8") as rawfile:
+                text = rawfile.read()
+                words = text.split()
+                w1 = words[random.randint(0, len(words) - 1)]
+        
+            # Creating placeholder word w2
+            w2 = ["_"] * len(w1)
+        
+            errors_left = 6
+            letters_tried = []
+        
+            # While there are unguessed letters, print the hang(wo)man and the previous guesses
+            while "_" in w2:
+                clear()
+                # The lambda thing is just to remove the s when there is only one error left.
+                print(f"Letters you have guessed:\n {fancy_list(letters_tried)}")
+                print(
+                    f"You have the right to make up to {errors_left} "
+                    f"error{(lambda x: 's' if (errors_left != 1) else '' )(errors_left)}.\n"
+                    f"{art[gender][-(errors_left+1)]}"  # Corresponds to the right ASCII picture
+                    f"{fancy_list(w2)}")
+        
+                # If they are no errors left, break ; else ask a guess
+                if errors_left == 0:
+                    break
+        
+                # We want the input to be a single lowercase letter
+                while True:
+                    l = input("Guess a letter: ")
+                    if len(l) != 1 or not l.isalpha():
+                        print("Please guess only ONE letter at a time!")
+                    else:
+                        break
+        
+                if l not in letters_tried:
+                    letters_tried.append(l)
+                    if l in w1:
+                        for i in range(len(w1)):
+                            if w1[i] == l:
+                                w2[i] = l
+                                # print(fancy_list(w2))
+                    else:
+                        errors_left -= 1
+        
+                        # print(fancy_list(w2))
+                else:
+                    print("You've already guessed that letter. Try again.")
+        
+            if "_" in w2:
+                print(f"You lose! Booo\n"
+                      f"Your word was {w1}")
+            else:
+                print("Yay! You win!")
+        
+            playagain = None
+        
+            while playagain is None:
+                choice = input("Do you want to play again ? [Y/n] ")
+                no = ['no', 'n', 'non', 'quit', "quitter", "q"]
+                if choice in no:
+                    playagain = False
+                else:
+                    playagain = True
+        
+            if not playagain:
+                break
+
+
+The hangman without GUI is more or less like an addition of some of the previous programs (4.a/4.f) 
+
+
+###Part 3
+
+    import random
+    import tkinter.messagebox
+    from tkinter import *
+    from tkinter.ttk import *
+    
+    
+    def fancy_string(s: str):
+        """Return a formated str from a str."""
+        r = ""
+        for i in range(len(s)):
+            r += s[i]
+            if i != len(s) - 1:
+                r += " "
+        return r
+    
+    
+    def fancy_list(l: list):
+        """Return a formated str from a string."""
+        r = ""
+        for i in range(len(l)):
+            r += l[i]
+            if i != len(l) - 1:
+                r += " "
+        return r
+    
+    
+    def callback_key(event):
+        global letters_tried
+        print(event)
+        # #We check the state so we're sure there is a word to guess
+        if state.get() == "wait_for_input":
+            print(event.char)
+            l = event.char
+            if l not in letters_tried:
+                letters_tried.append(l)
+                if l in word.get():
+                    temp_placeholder = ""
+                    for i in range(len(word.get())):
+                        if word.get()[i] == l:
+                            temp_placeholder += l
+                        else:
+                            temp_placeholder += word_placeholder.get()[i]
+                    word_placeholder.set(temp_placeholder)
+                    word_placeholder_displayed.set(fancy_string(temp_placeholder))
+                    print(word_placeholder.get())
+                else:
+                    errors_left_intvar.set(errors_left_intvar.get() - 1)
+                    errors_left_strvar_displayed.set(str(errors_left_intvar.get()) + " errors left.")
+                    global photo
+                    global photo_label
+                    photo = PhotoImage(file=f"HangmanFig/Hangman_{6 - errors_left_intvar.get()+1}.gif")
+                    photo_label.configure(image=photo)
+                    print(word_placeholder.get())
+    
+                letters_tried_strvar.set("Letters tried: " + fancy_list(letters_tried))
+            else:
+                tkinter.messagebox.showwarning("Letter already guessed",
+                                               "You've already guessed that letter. Please try again.")
+    
+            # FAILURE
+            if errors_left_intvar.get() == 0:
+                state.set("failed")
+                print("failed")
+                tkinter.messagebox.showinfo("Boooh!", f"You lost ! Your word was {word.get()}.")
+    
+            # WIN
+            if "_" not in word_placeholder.get():
+                state.set("won")
+                tkinter.messagebox.showinfo("Congratulations!", "You won!")
+    
+    
+    def play():
+        # Random selection of the word w1
+        with open("list.txt", "r", encoding="utf-8") as rawfile:
+            text = rawfile.read()
+            words = text.split()
+            word.set(words[random.randint(0, len(words) - 1)])
+            print(word.get())
+    
+        # Creating placeholder word
+        tmp = ""
+        for i in range(len(word.get())):
+            tmp += "_"
+            # if i != len(word.get()) - 1:
+            #     tmp += " "
+    
+        global photo
+        global photo_label
+        photo = PhotoImage(file=f"HangmanFig/Hangman_1.gif")
+        photo_label.configure(image=photo)
+    
+        word_placeholder.set(tmp)
+        word_placeholder_displayed.set(fancy_string(tmp))
+    
+        errors_left_intvar.set(6)
+        errors_left_strvar_displayed.set("6 errors left.")
+    
+    
+    can = Tk()
+    can.title("Hangman")
+    can.config(bg='white')
+    
+    # can = Canvas(root)
+    # can.pack()
+    
+    can.bind("<Key>", callback_key)
+    
+    style = Style()
+    style.configure("TLabel", background="white", font=('Segoe UI', 10))
+    
+    start_button = Button(can, text="Start", command=play)
+    quit_button = Button(can, text="Quit", command=quit)
+    start_button.pack()
+    quit_button.pack()
+    
+    letters_tried = []
+    
+    letters_tried_strvar = StringVar()
+    word_placeholder = StringVar()
+    word_placeholder_displayed = StringVar()
+    word = StringVar()
+    state = StringVar()
+    
+    errors_left_intvar = IntVar()
+    errors_left_strvar_displayed = StringVar()
+    
+    photo = PhotoImage(file="HangmanFig/Hangman_0.gif")
+    photo_label = Label(can, image=photo)
+    
+    errors_left_label = Label(can, textvariable=errors_left_strvar_displayed)
+    placeholder_word_label = Label(can, textvariable=word_placeholder_displayed)
+    letters_tried_label = Label(can, textvariable=letters_tried_strvar)
+    
+    photo_label.pack()
+    errors_left_label.pack()
+    placeholder_word_label.pack()
+    letters_tried_label.pack()
+    
+    can.mainloop()
+
+The Hangman with the GUI has the sames bases as the other hangman but we had to it a few changes to aloud it to work
+with Tkinter a class from python
     
 Main difficulties encountered
 -----------------------------
 
+The difficulties were mostly during the passage from the simple Hangman to the hangman with the GUI, in fact the hardest parts were
+to change a part of our variables to transform it into IntVar()/StringVar() to get variable that change constantly according to the program
+and the displaying of the images.
+
 
 Analysis
 --------
+
+In our opinion the project was really divided in 3 part the first one was pretty easy it remember us the TP we add, then the Hangman 
+forced us to think about a way of realising it and finally the GUI part that had aloud us to think ever deeper.
+But even if it had add some difficulties, the project was easy to understand so it helped us a lot. 
 
 
 Conclusion
