@@ -142,6 +142,10 @@ For this program we're defining the word that we need to check the number of occ
 the length of the array and we're doing an if to check in a lower version of the words and if it's same word we're adding
 one to the number of occurrences
 
+
+####Part 2
+
+4. a)
     
 Main difficulties encountered
 -----------------------------
