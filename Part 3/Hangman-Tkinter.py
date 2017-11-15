@@ -31,6 +31,10 @@ def callback_key(event):
                 print(word_placeholder.get())
             else:
                 errors_left_intvar.set(errors_left_intvar.get() - 1)
+                global photo
+                global label_photo
+                photo = PhotoImage(file=f"HangmanFig/Hangman_{6 - errors_left_intvar.get()+1}.gif")
+                label_photo.configure(image=photo)
                 print(word_placeholder.get())
         else:
             print("You've already guessed that letter. Try again.")
@@ -38,11 +42,13 @@ def callback_key(event):
         # FAILURE
         if errors_left_intvar.get() == 0:
             state.set("failed")
+            print("failed")
             # TODO exit and show failure
 
         # WIN
         if "_" not in word_placeholder.get():
             state.set("won")
+            print("won")
             # TODO exit and show win
 
 
@@ -58,8 +64,8 @@ def play():
     tmp = ""
     for i in range(len(word.get())):
         tmp += "_"
-        if i != len(word.get()) - 1:
-            tmp += " "
+        # if i != len(word.get()) - 1:
+        #     tmp += " "
     word_placeholder.set(tmp)
     # toguess.set(word_placeholder.get())
     errors_left_intvar.set(6)
@@ -80,11 +86,11 @@ def play():
 
     state.set("wait_for_input")
 
-    if "_" in word_placeholder.get():
-        print(f"You lose! Booo\n"
-              f"Your word was {word.get()}")
-    else:
-        print("Yay! You win!")
+    # if "_" in word_placeholder.get():
+    #     print(f"You lose! Booo\n"
+    #           f"Your word was {word.get()}")
+    # else:
+    #     print("Yay! You win!")
 
 
 root = Tk()
@@ -111,8 +117,13 @@ state = StringVar()
 
 errors_left_intvar = IntVar()
 
+photo = PhotoImage(file="HangmanFig/Hangman_1.gif")
+label_photo = Label(can, image=photo)
+label_photo.pack()
+errors_left = Label(can, textvariable=errors_left_intvar)
 toguess_tk = Label(can, textvariable=word_placeholder)
 text_print = Label(can, textvariable=text_print)
+errors_left.pack()
 toguess_tk.pack()
 text_print.pack()
 
