@@ -75,7 +75,6 @@ def play():
         text = rawfile.read()
         words = text.split()
         word.set(words[random.randint(0, len(words) - 1)])
-        print(word.get())
 
     # Creating placeholder word
     tmp = ""
@@ -84,8 +83,10 @@ def play():
         # if i != len(word.get()) - 1:
         #     tmp += " "
 
+    # We reset everything
     global photo
     global photo_label
+    global letters_tried
     photo = PhotoImage(file=f"HangmanFig/Hangman_1.gif")
     photo_label.configure(image=photo)
 
@@ -95,19 +96,8 @@ def play():
     errors_left_intvar.set(6)
     errors_left_strvar_displayed.set("6 errors left.")
 
-    # While there are unguessed letters, print the hang(wo)man and the previous guesses
-    # while "_" in w2:
-    # The lambda thing is just to remove the s when there is only one error left.
-    # print(f"Letters you have guessed:\n {fancy_list(letters_tried)}")
-    # print(
-    #     f"You have the right to make up to {errors_left_intvar.get()} "
-    #     f"error{(lambda x: 's' if (errors_left_intvar.get() != 1) else '' )(errors_left_intvar.get())}.\n"
-    #     # f"{art[gender][-(errors_left_intvar.get()+1)]}"  # Corresponds to the right ASCII picture
-    #     f"{fancy_list(w2)}")
-
-    # If they are no errors left, break ; else ask a guess
-    # if errors_left_intvar.get() == 0:
-    #     return
+    letters_tried = []
+    letters_tried_strvar.set("Letters tried: " + fancy_list(letters_tried))
 
     state.set("wait_for_input")
 
