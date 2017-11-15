@@ -121,7 +121,20 @@ doing an if to check in a lower version of the words and if it's same word we're
 
 
     
-1. g)
+3. g)
+
+
+    l = ["Salut", "les", "$w_1$", "Anticonstitutionnellement"]
+    a = str(input("word to replace"))
+    b = str(input("word that replace"))
+    
+    for i in range(len(l)):
+        l[i] = l[i].replace(a, b)
+    
+    print(l)
+        
+For this one we're asking the user what word does he want to replace and with which word by using two input.
+Then we're trying whit all the possibility of the array by using a for loop of the lenth of the array then we print it.
 
 
 3. h)
