@@ -7,6 +7,5 @@ b = str(input("word that replace"))
 
 for i in range(len(l)):
     l[i] = l[i].replace(a, b)
-    l[i] = l[i].replace($w_1$, $w_2$)
 
     print(l)
