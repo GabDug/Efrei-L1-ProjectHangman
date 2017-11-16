@@ -1,17 +1,17 @@
-![Project Hangman](logo-project-hangman.png)
+![Project Hangman](https://raw.githubusercontent.com/SoFolichon/ProjectHangman/master/logo-project-hangman.png)
 ===============
 *By Gabriel DUGNY and Vincent LACROUTS, Efrei Paris Promo 2022, November 2017.*
 
 
 Introduction
 ------------
-  This program written in Python 3.6 allows the users to play the "Hangman" game, 
+&nbsp;&nbsp;&nbsp;&nbsp;This program written in Python 3.6 allows the users to play the "Hangman" game, 
 in a console or with a Tk graphical interface.
 
 
 Presentation
 ------------
-  According to the sheet, the goal of the game is to guess a word, while your character on the screen is not
+&nbsp;&nbsp;&nbsp;&nbsp;According to the sheet, the goal of the game is to guess a word, while your character on the screen is not
 hung yet. 
 
 For part 2, the non graphical game, we respected all the specifications:
@@ -639,20 +639,20 @@ with Tkinter.
     
 Main difficulties encountered
 -----------------------------
-The difficulties were mostly during the passage from the simple Hangman to the hangman with the GUI, 
+&nbsp;&nbsp;&nbsp;&nbsp;The difficulties were mostly during the passage from the simple Hangman to the hangman with the GUI, 
 in fact the hardest parts were to change a part of our variables to transform it into ```IntVar()```/```StringVar()``` 
 to get variable that change constantly according to the program and the displaying of the images.
 
 
 Analysis
 --------
-In our opinion the project was really divided in 3 part the first one was pretty easy it remembered us the TP we add, 
+&nbsp;&nbsp;&nbsp;&nbsp;In our opinion the project was really divided in 3 part the first one was pretty easy it remembered us the TP we add, 
 then the Hangman forced us to think about a way of realising it and finally the GUI part that had aloud us to think even deeper.
 But even if it had add some difficulties, the goal was easy to understand so it helped us a lot. 
 
 
 Conclusion
 ----------
-This project was very interesting even if we encountered some difficulties, it helped us to develop our level in Python 
+&nbsp;&nbsp;&nbsp;&nbsp;This project was very interesting even if we encountered some difficulties, it helped us to develop our level in Python 
 and the last part made us rediscovered the Tkinter module. It helped us to improve our knowledge in Python, as well as our
 ability to work in pairs and collaborate.

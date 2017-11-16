@@ -1,4 +1,4 @@
-Project Hangman
+![Project Hangman](https://raw.githubusercontent.com/SoFolichon/ProjectHangman/master/logo-project-hangman.png)
 ===
 By Vincent LACROUTS and Gabriel DUGNY
 
