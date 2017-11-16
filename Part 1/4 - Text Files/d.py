@@ -1,5 +1,6 @@
 # get a word w1 from the user and displays all the words w2 in the file having w1 as a
 # sub-word.
+# Suggested example : set w1 as "able"
 
 with open("list.txt", "r", encoding="utf-8") as rawfile:
     text = rawfile.read()
