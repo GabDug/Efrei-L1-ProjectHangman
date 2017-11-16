@@ -21,32 +21,36 @@ def callback_key(event):
     if state.get() == "wait_for_input":
         print(event.char)
         l = event.char
-        if l not in letters_tried:
-            letters_tried.append(l)
-            if l in word.get():
-                temp_placeholder = ""
-                for i in range(len(word.get())):
-                    if word.get()[i] == l:
-                        temp_placeholder += l
-                    else:
-                        temp_placeholder += word_placeholder.get()[i]
-                word_placeholder.set(temp_placeholder)
-                word_placeholder_displayed.set(fancy_string_list(temp_placeholder))
-                print(word_placeholder.get())
+        if l.isalpha():
+            l = l.upper()
+            if l not in letters_tried:
+                letters_tried.append(l)
+                if l in word.get():
+                    temp_placeholder = ""
+                    for i in range(len(word.get())):
+                        if word.get()[i] == l:
+                            temp_placeholder += l
+                        else:
+                            temp_placeholder += word_placeholder.get()[i]
+                    word_placeholder.set(temp_placeholder)
+                    word_placeholder_displayed.set(fancy_string_list(temp_placeholder))
+                    print(word_placeholder.get())
+                else:
+                    errors_left_intvar.set(errors_left_intvar.get() - 1)
+                    errors_left_strvar_displayed.set(str(errors_left_intvar.get()) + " errors left.")
+                    global photo
+                    global photo_label
+                    photo = PhotoImage(file=f"HangmanFig/Hangman_{7 - errors_left_intvar.get()}.gif")
+                    photo_label.configure(image=photo)
+                    print(word_placeholder.get())
+
+                letters_tried_strvar.set("Letters tried: " + fancy_string_list(letters_tried))
             else:
-                errors_left_intvar.set(errors_left_intvar.get() - 1)
-                errors_left_strvar_displayed.set(str(errors_left_intvar.get()) + " errors left.")
-                global photo
-                global photo_label
-                photo = PhotoImage(file=f"HangmanFig/Hangman_{7 - errors_left_intvar.get()}.gif")
-                photo_label.configure(image=photo)
-                print(word_placeholder.get())
-
-            letters_tried_strvar.set("Letters tried: " + fancy_string_list(letters_tried))
+                tkinter.messagebox.showwarning("Letter already guessed",
+                                               "You've already guessed that letter. Please try again.")
         else:
-            tkinter.messagebox.showwarning("Letter already guessed",
-                                           "You've already guessed that letter. Please try again.")
-
+            tkinter.messagebox.showwarning("Not a letter",
+                                           "You have to guess a LETTER. Please try again.")
         # FAILURE
         if errors_left_intvar.get() == 0:
             state.set("failed")
@@ -64,7 +68,7 @@ def play():
     with open("list.txt", "r", encoding="utf-8") as rawfile:
         text = rawfile.read()
         words = text.split()
-        word.set(words[random.randint(0, len(words) - 1)])
+        word.set(words[random.randint(0, len(words) - 1)].upper())
 
     # Creating placeholder word
     tmp = ""
@@ -103,7 +107,7 @@ root.config(bg='white')
 root.bind("<Key>", callback_key)
 
 style = Style()
-style.configure("TLabel", background="white", font=('Segoe UI', 11))
+style.configure("TLabel", background="white", font=('Segoe UI', 10))
 
 start_button = Button(root, text="Start", command=play)
 quit_button = Button(root, text="Quit", command=quit)
