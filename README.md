@@ -10,3 +10,4 @@ The project and the exercices won't work on a previous version of Python.
 Notes
 -----
 Font and hangman drawing from the "Hangman's Delight" font, free to use in school projects.
+Words from [the 10,000 most used english words](https://github.com/first20hours/google-10000-english).
