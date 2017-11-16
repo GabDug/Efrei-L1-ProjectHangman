@@ -21,7 +21,9 @@ def callback_key(event):
     if state.get() == "wait_for_input":
         print(event.char)
         l = event.char
+        # We check that it is a letter
         if l.isalpha():
+            # We work with uppercase letters
             l = l.upper()
             if l not in letters_tried:
                 letters_tried.append(l)
