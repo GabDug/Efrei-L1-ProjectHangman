@@ -27,7 +27,7 @@ def fancy_list(l: list):
 def callback_key(event):
     global letters_tried
     print(event)
-    # #We check the state so we're sure there is a word to guess
+    # We check the state so we're sure there is a word to guess
     if state.get() == "wait_for_input":
         print(event.char)
         l = event.char
@@ -101,27 +101,22 @@ def play():
 
     state.set("wait_for_input")
 
-    # if "_" in word_placeholder.get():
-    #     print(f"You lose! Booo\n"
-    #           f"Your word was {word.get()}")
-    # else:
-    #     print("Yay! You win!")
 
+root = Tk()
+root.title("Hangman")
+root.config(bg='white')
 
-can = Tk()
-can.title("Hangman")
-can.config(bg='white')
-
+# Now unused canvas
 # can = Canvas(root)
 # can.pack()
 
-can.bind("<Key>", callback_key)
+root.bind("<Key>", callback_key)
 
 style = Style()
 style.configure("TLabel", background="white", font=('Segoe UI', 10))
 
-start_button = Button(can, text="Start", command=play)
-quit_button = Button(can, text="Quit", command=quit)
+start_button = Button(root, text="Start", command=play)
+quit_button = Button(root, text="Quit", command=quit)
 start_button.pack()
 quit_button.pack()
 
@@ -137,15 +132,15 @@ errors_left_intvar = IntVar()
 errors_left_strvar_displayed = StringVar()
 
 photo = PhotoImage(file="HangmanFig/Hangman_0.gif")
-photo_label = Label(can, image=photo)
+photo_label = Label(root, image=photo)
 
-errors_left_label = Label(can, textvariable=errors_left_strvar_displayed)
-placeholder_word_label = Label(can, textvariable=word_placeholder_displayed)
-letters_tried_label = Label(can, textvariable=letters_tried_strvar)
+errors_left_label = Label(root, textvariable=errors_left_strvar_displayed)
+placeholder_word_label = Label(root, textvariable=word_placeholder_displayed)
+letters_tried_label = Label(root, textvariable=letters_tried_strvar)
 
 photo_label.pack()
 errors_left_label.pack()
 placeholder_word_label.pack()
 letters_tried_label.pack()
 
-can.mainloop()
+root.mainloop()
