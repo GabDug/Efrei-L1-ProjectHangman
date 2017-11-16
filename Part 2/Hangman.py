@@ -138,6 +138,7 @@ def fancy_list(l: list):
     r = ""
     for i in range(len(l)):
         r += l[i]
+        # Add space after a character except if it's the last character
         if i != len(l) - 1:
             r += " "
     return r
@@ -146,9 +147,9 @@ def fancy_list(l: list):
 def choose_gender():
     gen = ""
     while gen != "man" and gen != "woman":
-        choice = input("Do you want to be portrayed as a man ? [Y/n] ")
-        no = ['no', 'n', 'non', 'woman', 'women']
-        if choice in no:
+        choice_gender = input("Do you want to be portrayed as a man ? [Y/n] ")
+        choice_no = ['no', 'n', 'non', 'woman', 'women']
+        if choice_gender in choice_no:
             gen = 'woman'
         else:
             gen = 'man'
@@ -201,11 +202,8 @@ while True:
                 for i in range(len(w1)):
                     if w1[i] == l:
                         w2[i] = l
-                        # print(fancy_list(w2))
             else:
                 errors_left -= 1
-
-                # print(fancy_list(w2))
         else:
             print("You've already guessed that letter. Try again.")
 
