@@ -4,8 +4,8 @@ from tkinter import *
 from tkinter.ttk import *
 
 
-def fancy_string(s: str):
-    """Return a formated str from a str."""
+def fancy_string_list(s) -> str:
+    """Return a formated str from a str or list."""
     r = ""
     for i in range(len(s)):
         r += s[i]
@@ -14,19 +14,9 @@ def fancy_string(s: str):
     return r
 
 
-def fancy_list(l: list):
-    """Return a formated str from a string."""
-    r = ""
-    for i in range(len(l)):
-        r += l[i]
-        if i != len(l) - 1:
-            r += " "
-    return r
-
-
 def callback_key(event):
     global letters_tried
-    print(event)
+    # print(event)
     # We check the state so we're sure there is a word to guess
     if state.get() == "wait_for_input":
         print(event.char)
@@ -41,18 +31,18 @@ def callback_key(event):
                     else:
                         temp_placeholder += word_placeholder.get()[i]
                 word_placeholder.set(temp_placeholder)
-                word_placeholder_displayed.set(fancy_string(temp_placeholder))
+                word_placeholder_displayed.set(fancy_string_list(temp_placeholder))
                 print(word_placeholder.get())
             else:
                 errors_left_intvar.set(errors_left_intvar.get() - 1)
                 errors_left_strvar_displayed.set(str(errors_left_intvar.get()) + " errors left.")
                 global photo
                 global photo_label
-                photo = PhotoImage(file=f"HangmanFig/Hangman_{6 - errors_left_intvar.get()+1}.gif")
+                photo = PhotoImage(file=f"HangmanFig/Hangman_{7 - errors_left_intvar.get()}.gif")
                 photo_label.configure(image=photo)
                 print(word_placeholder.get())
 
-            letters_tried_strvar.set("Letters tried: " + fancy_list(letters_tried))
+            letters_tried_strvar.set("Letters tried: " + fancy_string_list(letters_tried))
         else:
             tkinter.messagebox.showwarning("Letter already guessed",
                                            "You've already guessed that letter. Please try again.")
@@ -91,13 +81,13 @@ def play():
     photo_label.configure(image=photo)
 
     word_placeholder.set(tmp)
-    word_placeholder_displayed.set(fancy_string(tmp))
+    word_placeholder_displayed.set(fancy_string_list(tmp))
 
     errors_left_intvar.set(6)
     errors_left_strvar_displayed.set("6 errors left.")
 
     letters_tried = []
-    letters_tried_strvar.set("Letters tried: " + fancy_list(letters_tried))
+    letters_tried_strvar.set("Letters tried: " + fancy_string_list(letters_tried))
 
     state.set("wait_for_input")
 
