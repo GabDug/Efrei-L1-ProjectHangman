@@ -5,46 +5,45 @@
 
 Introduction
 ------------
-This program written in Python 3.6 allows the users to play the "Hangman" game, 
+  This program written in Python 3.6 allows the users to play the "Hangman" game, 
 in a console or with a Tk graphical interface.
 
 
 Presentation
 ------------
-According to the sheet, the goal of the game is to guess a word, while your character on the screen is not
+  According to the sheet, the goal of the game is to guess a word, while your character on the screen is not
 hung yet. 
 
 For part 2, the non graphical game, we respected all the specifications:
-- The user has to guess a random word, one letter at a time.
-- The guess is not counted as one if the letter has already been guessed.
-- If the letter is in the word, we show them in the placeholder word, instead of a "_".
-- If the letter is not in the word, the user is warned that he was wrong, he loses a try, 
+* The user has to guess a random word, one letter at a time.
+* The guess is not counted as one if the letter has already been guessed.
+* If the letter is in the word, we show them in the placeholder word, instead of a "_".
+* If the letter is not in the word, the user is warned that he was wrong, he loses a try, 
 and his character gets closer to death...
-- The user is able to choose between a male and female character.
-- The user is asked if he wants to play again at the end of a round.
+* The user is able to choose between a male and female character.
+* The user is asked if he wants to play again at the end of a round.
 
-To do so, we used decided to use some functions.
+To do so, we used decided to use some functions that helps us, especially for displaying the lists as we want to.
 
-For part 3, we created a GUI using Tkinter. We used a more event driven way of programming.
+For part 3, we created a GUI using Tkinter. We used a more event driven way of programming, as the program reacts to user input.
+
 
 
 The different algorithms
 ------------------------
-
-###Part 1
-
-3. a)    
-
+### Part 1 : Playing with strings
+#### 3 - List of Words
+##### 3. a)    
 ```python
- l = ["Salut", "les", "amis", "Anticonstitutionnellement"]
- 
- for w in l:
- print(w[1:-1])
+l = ["Salut", "les", "amis", "Anticonstitutionnellement"]
+
+for w in l:
+    print(w[1:-1])
 ```
-For this program we just print the different words from the second letter to the penultimate on after the other with a for loop.
+For this program we just print the different words from the second letter to the penultimate one, one after the other 
+with a `for` loop.
 
-3. b)
-
+##### 3. b)
 ```python
 l = ["Salut", "les", "amis", "Anticonstitutionnellement"]
 max_length = 0
@@ -57,11 +56,10 @@ for i in range(len(l)):
 
 print(f"Longest word is \"{l[pos]}\" at index {pos}.")
 ```
-For this one we are classing the lenth of the differents words by comparing thoses
-to do so wwe're using an if in a for loop.
+Here, we are searching for the longest word. We are comparing the length of each words with the previous length. 
+To do so we're using an `if` condition in a `for` loop.
 
-3. c)
-
+##### 3. c)
 ```python
 l = ["amelie", "gérad", "parc zoologique", "zoo"]
 
@@ -69,11 +67,10 @@ l.sort()
 
 print(l[-1])
 ```    
-For this program we're sorting the array by usinge the function sort, the we're showing the last
-string  in the array.
+For this program we're sorting the array alphabetically by using the function `sort()`, then we show the last
+string in the array (index -1).
 
-3. d) 
-
+##### 3. d) 
 ```python
 l = ["Salut", "les", "amis", "Anticonstitutionnellement"]
 l2 = []
@@ -84,22 +81,20 @@ for w in l:
 print(l)
 print(l2)
 ```
-    
-In this program we're adding the length of all the word in a second array by using a for loop.
+In this program we're adding the length of each word in a second array by using a `for` loop.
 
-3. e)
-
-```python     
+##### 3. e)
+```python
 l = ["Salut", "les", "amis", "Anticonstitutionnellement"]
 print(f"They are {len(l)} elements in the list :")
 for w in l:
     print(w)
 ```
-In this one we're using the print (f ) to get the length of the array in the print, then we're printing all the array
-by using a for loop.
+In this one we display the numbers of the elements of the array follow by the elements. 
+We get get the length of the array with `len()` then we're printing all the array
+by using a `for` loop.
 
-3. f)
-
+##### 3. f)
 ```python
 l = ["Salut", "les", "amis", "Anticonstitutionnellement", "salut", "salutations", "sAlUT"]
 
@@ -114,13 +109,12 @@ for i in range(len(l)):
 
 print(l)
 ```
-    
-For this program we're defining the word to delete then we've created a for loop of the length of the array and we're 
-doing an if to check in a lower version of the words and if it's same word we're deleting it.
+In this program, we delete all the occurences of a given word. We're defining the word to delete with `input()`
+then we launch a `for` loop going through all the elements. With use an offset, to change the index when deleting
+elements in the for loop. 
 
 
-    
-3. g)
+##### 3. g)
 
 ```python
 l = ["Salut", "les", "$w_1$", "Anticonstitutionnellement"]
@@ -132,12 +126,10 @@ for i in range(len(l)):
 
 print(l)
 ```
-For this one we're asking the user what word does he want to replace and with which word by using two input.
-Then we're trying whit all the possibility of the array by using a for loop of the lenth of the array then we print it.
+For this one we're asking the user what word does he want to replace and with which word by using `input()`.
+Then we replace it in all the elements of the array by using a for loop of the length of the array.
 
-
-3. h)
-
+##### 3. h)
 ```python
 l = ["Salut", "les", "$w_1$", "Anticonstitutionnellement", "SALUT"]
 l2 = []
@@ -151,17 +143,13 @@ for i in range(len(l)):
 
 print(f"They are {len(l2)} occurences of {word} at index : {l2}")
 ```
-    
-For this program we're defining the word that we need to check the number of occurrence so we've created a for loop of 
-the length of the array and we're doing an if to check in a lower version of the words and if it's same word we're adding
+For this program we're defining the word that we need to check the number of occurrence so we've created a `for` loop of 
+the length of the array and we're doing an `if` to check in a lower version of the words and if it's same word we're adding
 one to the number of occurrences.
 
 
-###Part 4
-
-
-4. a)
-
+#### 4 - Text files
+##### 4. a)
 ```python
 with open("list.txt", "r", encoding="utf-8") as rawfile:
     text = rawfile.read()
@@ -172,11 +160,11 @@ with open("list.txt", "r", encoding="utf-8") as rawfile:
           f"Number of characters : {len(text)}")
 ```           
 In this program we're using the with statement close the file properly, then we read the text. We're using the function
-split to get the number of words and we replace the enters and spaces to get the number of characters whit the len() function.
+`split()` to get the number of words and we replace the enters and spaces to get the number of characters with 
+the `len()` function.
 
 
-4. b)
-
+##### 4. b)
 ```python
 with open("list.txt", "r", encoding="utf-8") as rawfile:
     text = rawfile.read()
@@ -185,13 +173,12 @@ with open("list.txt", "r", encoding="utf-8") as rawfile:
     for w in words_set:
         print(f"{words.count(w)} {w}")
 ```    
-In this program we're using the with statement close the file properly, then we read the text. We're using the function
-split to get all words and we sort the words. Finally in the for loop that is doing all the different
-words of the list we put a print (f ) which has the function count to get the number of occurrences.
+In this program we're using the `with` statement to read the text file, as it will close the file properly on his own at 
+the end of the `with`.
+We're using the function `split()` to get all words and we sort them. 
+Finally in the for loop that is doing all the different words of the list we print the number of occurrences.
 
-
-4. c)
-
+##### 4. c)
 ```python
 with open("list.txt", "r", encoding="utf-8") as rawfile:
     text = rawfile.read()
@@ -201,13 +188,12 @@ with open("list.txt", "r", encoding="utf-8") as rawfile:
     with open("list_upper.txt","w",encoding="utf-8") as rawfile_upper:
         rawfile_upper.write(text)
 ```
-   
-For this program we're using the with statement close the file properly, then we read the text. Then we're using the 
-function upper. Finally we write the text again but in uppercase.
+Here, we have to change the list to put all words uppercase.
+For this program we're using the `with` statement again to read the text. Then we're using the 
+function `upper()` to put the whole file in uppercase. Finally we write the text in an other file.
 
 
-4. d)
-
+##### 4. d)
 ```python
 with open("list.txt", "r", encoding="utf-8") as rawfile:
     text = rawfile.read()
@@ -218,12 +204,10 @@ with open("list.txt", "r", encoding="utf-8") as rawfile:
         if w1.lower() in w2.lower():
             print(f"{w2}")
 ```       
-For this program we're using the with statement close the file properly, then we read the text. Then we're using the 
-function lower Then w're using the function lower. Finally we use the in to find if the word w1 is in w2.
+For this program we're using the with statementtoo to read the file. Then we're using the 
+function `lower()` . Finally we use the `in` keyword to find if the word w1 is in w2.
 
-
-4. e)
-
+##### 4. e)
 ```python
 import random
 
@@ -233,13 +217,11 @@ with open("list.txt", "r", encoding="utf-8") as rawfile:
 
 print(words[random.randint(0, len(words)-1)])
 ```
+For this one we import the random class, then we're using the with statement to read the text.
+Finally we print a random word by choosing a random int in the length of the number of words, 
+and choosing the word associated with it in the list.
 
-For this one we import the random class, then we're using the with statement close the file properly, then we read the text.
-Finally we print a random word by choosing a random int in the length of the number of words.
-
-
-4. f)
-
+##### 4. f)
 ```python
 import random
 
@@ -262,15 +244,11 @@ with open("list.txt", "r", encoding="utf-8") as rawfile:
 
         print(w2)
 ```   
-For this one we import the random class, then we're using the with statement close the file properly, then we read the text.
-Then we choose a random word by choosing a random int in the length of the number of words.We input a str. Finally we create a w2 then 
+Here we also use random and the `with` statement.
+Then we choose a random word by choosing a random int in the length of the number of words. We input a str. Finally we create a w2 then 
 we use a if to see if a letter is in the word and if it is, we print the word with "_" at the place of other letters.
 
-
-###Part 2
-
-
-the Hangman without the GUI
+### Part 2 : Hangman without GUI
 ```python
 import os
 import random
@@ -431,82 +409,83 @@ def choose_gender():
 
 gender = choose_gender()
 
-    # While the user wants to play
-    # (if the user wants to quit, break)
-    while True:
-        # Random selection of the word w1
-        with open("list.txt", "r", encoding="utf-8") as rawfile:
-            text = rawfile.read()
-            words = text.split()
-            w1 = words[random.randint(0, len(words) - 1)]
-    
-        # Creating placeholder word w2
-        w2 = ["_"] * len(w1)
-    
-        errors_left = 6
-        letters_tried = []
-    
-        # While there are unguessed letters, print the hang(wo)man and the previous guesses
-        while "_" in w2:
-            clear()
-            # The lambda thing is just to remove the s when there is only one error left.
-            print(f"Letters you have guessed:\n {fancy_list(letters_tried)}")
-            print(
-                f"You have the right to make up to {errors_left} "
-                f"error{(lambda x: 's' if (errors_left != 1) else '' )(errors_left)}.\n"
-                f"{art[gender][-(errors_left+1)]}"  # Corresponds to the right ASCII picture
-                f"{fancy_list(w2)}")
-    
-            # If they are no errors left, break ; else ask a guess
-            if errors_left == 0:
-                break
-    
-            # We want the input to be a single lowercase letter
-            while True:
-                l = input("Guess a letter: ")
-                if len(l) != 1 or not l.isalpha():
-                    print("Please guess only ONE letter at a time!")
-                else:
-                    break
-    
-            if l not in letters_tried:
-                letters_tried.append(l)
-                if l in w1:
-                    for i in range(len(w1)):
-                        if w1[i] == l:
-                            w2[i] = l
-                            # print(fancy_list(w2))
-                else:
-                    errors_left -= 1
-    
-                    # print(fancy_list(w2))
-            else:
-                print("You've already guessed that letter. Try again.")
-    
-        if "_" in w2:
-            print(f"You lose! Booo\n"
-                  f"Your word was {w1}")
-        else:
-            print("Yay! You win!")
-    
-        playagain = None
-    
-        while playagain is None:
-            choice = input("Do you want to play again ? [Y/n] ")
-            no = ['no', 'n', 'non', 'quit', "quitter", "q"]
-            if choice in no:
-                playagain = False
-            else:
-                playagain = True
-    
-        if not playagain:
+# While the user wants to play
+# (if the user wants to quit, break)
+while True:
+    # Random selection of the word w1
+    with open("list.txt", "r", encoding="utf-8") as rawfile:
+        text = rawfile.read()
+        words = text.split()
+        w1 = words[random.randint(0, len(words) - 1)]
+
+    # Creating placeholder word w2
+    w2 = ["_"] * len(w1)
+
+    errors_left = 6
+    letters_tried = []
+
+    # While there are unguessed letters, print the hang(wo)man and the previous guesses
+    while "_" in w2:
+        clear()
+        # The lambda thing is just to remove the s when there is only one error left.
+        print(f"Letters you have guessed:\n {fancy_list(letters_tried)}")
+        print(
+            f"You have the right to make up to {errors_left} "
+            f"error{(lambda x: 's' if (errors_left != 1) else '' )(errors_left)}.\n"
+            f"{art[gender][-(errors_left+1)]}"  # Corresponds to the right ASCII picture
+            f"{fancy_list(w2)}")
+
+        # If they are no errors left, break ; else ask a guess
+        if errors_left == 0:
             break
+
+        # We want the input to be a single lowercase letter
+        while True:
+            l = input("Guess a letter: ")
+            if len(l) != 1 or not l.isalpha():
+                print("Please guess only ONE letter at a time!")
+            else:
+                break
+
+        # If the letter has not already been guessed by the user...
+        if l not in letters_tried:
+            # Add it to the list of letters tried
+            letters_tried.append(l)
+            # Check if it's in the hidden word
+            if l in w1:
+                for i in range(len(w1)):
+                    if w1[i] == l:
+                        w2[i] = l
+            else:
+                errors_left -= 1
+        else:
+            print("You've already guessed that letter. Try again.")
+
+    if "_" in w2:
+        print(f"You lose! Booo\n"
+              f"Your word was {w1}")
+    else:
+        print("Yay! You win!")
+
+    playagain = None
+    
+    # We use a loop to be sure the user inputs something correct
+    while playagain is None:
+        choice = input("Do you want to play again ? [Y/n] ")
+        no = ['no', 'n', 'non', 'quit', "quitter", "q"]
+        if choice in no:
+            playagain = False
+        else:
+            playagain = True
+
+    if not playagain:
+        break
 ```
+The hangman without GUI is more or less like an addition of some of the previous programs (4.a/4.f). 
+The main loop has no condition (```while True:```) but is not an infinite loop, as the user is able to choose a the end of a round if he
+wants to play again or not. If he wants to quit, the ```break``` statement will stop the loop.
 
-The hangman without GUI is more or less like an addition of some of the previous programs (4.a/4.f) 
-
-
-###Part 3 : Hangman with GUI
+### Part 3 : Hangman with GUI
 ```python
 import random
 import tkinter.messagebox
@@ -537,7 +516,7 @@ def fancy_list(l: list):
 def callback_key(event):
     global letters_tried
     print(event)
-    # #We check the state so we're sure there is a word to guess
+    # We check the state so we're sure there is a word to guess
     if state.get() == "wait_for_input":
         print(event.char)
         l = event.char
@@ -585,7 +564,6 @@ def play():
         text = rawfile.read()
         words = text.split()
         word.set(words[random.randint(0, len(words) - 1)])
-        print(word.get())
 
     # Creating placeholder word
     tmp = ""
@@ -594,8 +572,10 @@ def play():
         # if i != len(word.get()) - 1:
         #     tmp += " "
 
+    # We reset everything
     global photo
     global photo_label
+    global letters_tried
     photo = PhotoImage(file=f"HangmanFig/Hangman_1.gif")
     photo_label.configure(image=photo)
 
@@ -605,21 +585,27 @@ def play():
     errors_left_intvar.set(6)
     errors_left_strvar_displayed.set("6 errors left.")
 
+    letters_tried = []
+    letters_tried_strvar.set("Letters tried: " + fancy_list(letters_tried))
 
-can = Tk()
-can.title("Hangman")
-can.config(bg='white')
+    state.set("wait_for_input")
 
+
+root = Tk()
+root.title("Hangman")
+root.config(bg='white')
+
+# Now unused canvas
 # can = Canvas(root)
 # can.pack()
 
-can.bind("<Key>", callback_key)
+root.bind("<Key>", callback_key)
 
 style = Style()
 style.configure("TLabel", background="white", font=('Segoe UI', 10))
 
-start_button = Button(can, text="Start", command=play)
-quit_button = Button(can, text="Quit", command=quit)
+start_button = Button(root, text="Start", command=play)
+quit_button = Button(root, text="Quit", command=quit)
 start_button.pack()
 quit_button.pack()
 
@@ -635,41 +621,38 @@ errors_left_intvar = IntVar()
 errors_left_strvar_displayed = StringVar()
 
 photo = PhotoImage(file="HangmanFig/Hangman_0.gif")
-photo_label = Label(can, image=photo)
+photo_label = Label(root, image=photo)
 
-errors_left_label = Label(can, textvariable=errors_left_strvar_displayed)
-placeholder_word_label = Label(can, textvariable=word_placeholder_displayed)
-letters_tried_label = Label(can, textvariable=letters_tried_strvar)
+errors_left_label = Label(root, textvariable=errors_left_strvar_displayed)
+placeholder_word_label = Label(root, textvariable=word_placeholder_displayed)
+letters_tried_label = Label(root, textvariable=letters_tried_strvar)
 
 photo_label.pack()
 errors_left_label.pack()
 placeholder_word_label.pack()
 letters_tried_label.pack()
 
-can.mainloop()
+root.mainloop()
 ```
-
-The Hangman with the GUI has the sames bases as the other hangman but we had to it a few changes to aloud it to work
-with Tkinter a class from python
+The Hangman with the GUI has the sames bases as the other hangman but we had to it a few changes to allow it to work
+with Tkinter.
     
 Main difficulties encountered
 -----------------------------
-
-The difficulties were mostly during the passage from the simple Hangman to the hangman with the GUI, in fact the hardest parts were
-to change a part of our variables to transform it into IntVar()/StringVar() to get variable that change constantly according to the program
-and the displaying of the images.
+The difficulties were mostly during the passage from the simple Hangman to the hangman with the GUI, 
+in fact the hardest parts were to change a part of our variables to transform it into ```IntVar()```/```StringVar()``` 
+to get variable that change constantly according to the program and the displaying of the images.
 
 
 Analysis
 --------
-
-In our opinion the project was really divided in 3 part the first one was pretty easy it remember us the TP we add, then the Hangman 
-forced us to think about a way of realising it and finally the GUI part that had aloud us to think ever deeper.
-But even if it had add some difficulties, the project was easy to understand so it helped us a lot. 
+In our opinion the project was really divided in 3 part the first one was pretty easy it remembered us the TP we add, 
+then the Hangman forced us to think about a way of realising it and finally the GUI part that had aloud us to think even deeper.
+But even if it had add some difficulties, the goal was easy to understand so it helped us a lot. 
 
 
 Conclusion
 ----------
-
-This project was very interesting even if we encounter some difficulties, it helped us to develop our level in python 
-and the last part made us rediscovered a class of python which is tkinter. It helped us to improve our knowledge in python.
+This project was very interesting even if we encountered some difficulties, it helped us to develop our level in Python 
+and the last part made us rediscovered the Tkinter module. It helped us to improve our knowledge in Python, as well as our
+ability to work in pairs and collaborate.
